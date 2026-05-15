@@ -1,0 +1,22 @@
+{
+  "dataset": {
+    "ratings_path": "/Users/eduardo/Desktop/Insper/projeto_recommendation_system/data/ml_data/ratings.csv",
+    "movies_path": "/Users/eduardo/Desktop/Insper/projeto_recommendation_system/data/ml_data/movies.csv",
+    "n_users": 610,
+    "n_movies": 9724,
+    "n_ratings": 100836,
+    "train_size": 80672,
+    "test_size": 20164,
+    "global_mean_train": 3.503421261404205
+  },
+  "best_svd_k": 10,
+  "best_mf_k": 5,
+  "chosen_user_id": 414,
+  "files_generated": [
+    "results/metrics_rating.csv",
+    "results/metrics_top10.csv",
+    "results/experiment_k.csv",
+    "results/recommendation_examples.csv",
+    "results/summary.json"
+  ]
+}

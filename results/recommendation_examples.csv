@@ -1,0 +1,31 @@
+posicao,movieId,title,score_previsto,modelo
+1,50,"Usual Suspects, The (1995)",4.2180681228637695,Popularidade
+2,1221,"Godfather: Part II, The (1974)",4.18673038482666,Popularidade
+3,1104,"Streetcar Named Desire, A (1951)",4.1563520431518555,Popularidade
+4,4011,Snatch (2000),4.1356964111328125,Popularidade
+5,1198,Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981),4.121504306793213,Popularidade
+6,58559,"Dark Knight, The (2008)",4.119318962097168,Popularidade
+7,1172,Cinema Paradiso (Nuovo cinema Paradiso) (1989),4.115262985229492,Popularidade
+8,922,Sunset Blvd. (a.k.a. Sunset Boulevard) (1950),4.110444068908691,Popularidade
+9,2324,Life Is Beautiful (La Vita è bella) (1997),4.095369815826416,Popularidade
+10,1136,Monty Python and the Holy Grail (1975),4.084321022033691,Popularidade
+1,2797,Big (1988),3.6049790382385254,SVD
+2,3753,"Patriot, The (2000)",3.579911470413208,SVD
+3,4979,"Royal Tenenbaums, The (2001)",3.5735960006713867,SVD
+4,2953,Home Alone 2: Lost in New York (1992),3.568423271179199,SVD
+5,1760,Spice World (1997),3.56789493560791,SVD
+6,8376,Napoleon Dynamite (2004),3.567291259765625,SVD
+7,1265,Groundhog Day (1993),3.5646657943725586,SVD
+8,8644,"I, Robot (2004)",3.562082529067993,SVD
+9,54503,Superbad (2007),3.5564522743225098,SVD
+10,34,Babe (1995),3.5544233322143555,SVD
+1,3473,Jonah Who Will Be 25 in the Year 2000 (Jonas qui aura 25 ans en l'an 2000) (1976),5.0,Matrix Factorization
+2,1136,Monty Python and the Holy Grail (1975),5.0,Matrix Factorization
+3,26131,"Battle of Algiers, The (La battaglia di Algeri) (1966)",5.0,Matrix Factorization
+4,44555,"Lives of Others, The (Das leben der Anderen) (2006)",5.0,Matrix Factorization
+5,5747,Gallipoli (1981),5.0,Matrix Factorization
+6,50,"Usual Suspects, The (1995)",5.0,Matrix Factorization
+7,8874,Shaun of the Dead (2004),5.0,Matrix Factorization
+8,106100,Dallas Buyers Club (2013),5.0,Matrix Factorization
+9,1281,"Great Dictator, The (1940)",5.0,Matrix Factorization
+10,167064,I Am Not Your Negro (2017),5.0,Matrix Factorization
