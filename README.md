@@ -79,9 +79,11 @@ O modelo de popularidade recomenda filmes com melhores avaliacoes medias no conj
 
 A pontuacao de um filme e dada por:
 
-```text
-score(i) = (1 / N_i) * soma r_ui
-```
+$$
+\operatorname{score}(i) =
+\frac{1}{N_i}
+\sum_{u \in U_i} r_{ui}
+$$
 
 Onde:
 
@@ -94,15 +96,15 @@ Onde:
 
 O SVD decompoe a matriz de avaliacoes em tres matrizes:
 
-```text
-R ~= U Sigma V^T
-```
+$$
+R \approx U \Sigma V^T
+$$
 
 Como a matriz original e esparsa, foi necessario tratar valores faltantes antes da decomposicao. A estrategia usada foi centralizar as notas por usuario, preencher ausencias com zero e reconstruir a matriz com apenas os primeiros `k` fatores:
 
-```text
-R_hat = U_k Sigma_k V_k^T
-```
+$$
+\hat{R} = U_k \Sigma_k V_k^T
+$$
 
 O valor `k` controla a quantidade de fatores latentes usados na aproximacao.
 
@@ -110,9 +112,9 @@ O valor `k` controla a quantidade de fatores latentes usados na aproximacao.
 
 A Matrix Factorization representa usuarios e filmes por vetores latentes. A previsao da nota e:
 
-```text
-r_hat_ui = mu + b_u + b_i + p_u^T q_i
-```
+$$
+\hat{r}_{ui} = \mu + b_u + b_i + p_u^T q_i
+$$
 
 Onde:
 
@@ -125,9 +127,19 @@ Onde:
 
 O modelo foi treinado minimizando erro quadratico com regularizacao:
 
-```text
-L = soma (r_ui - r_hat_ui)^2 + lambda (||p_u||^2 + ||q_i||^2 + b_u^2 + b_i^2)
-```
+$$
+L =
+\sum_{(u,i) \in K}
+\left(r_{ui} - \hat{r}_{ui}\right)^2
++
+\lambda
+\left(
+\lVert p_u \rVert^2
++ \lVert q_i \rVert^2
++ b_u^2
++ b_i^2
+\right)
+$$
 
 ---
 
@@ -142,19 +154,41 @@ Um filme foi considerado relevante quando o usuario deu nota maior ou igual a `4
 
 ### Metricas de erro
 
-```text
-RMSE = sqrt((1 / |T|) * soma (r_ui - r_hat_ui)^2)
-MAE = (1 / |T|) * soma |r_ui - r_hat_ui|
-```
+$$
+RMSE =
+\sqrt{
+\frac{1}{|T|}
+\sum_{(u,i) \in T}
+\left(r_{ui} - \hat{r}_{ui}\right)^2
+}
+$$
+
+$$
+MAE =
+\frac{1}{|T|}
+\sum_{(u,i) \in T}
+\left|r_{ui} - \hat{r}_{ui}\right|
+$$
 
 Quanto menor o RMSE e o MAE, melhor.
 
 ### Metricas Top-10
 
-```text
-Precision@10 = relevantes recomendados / 10
-Recall@10 = relevantes recomendados / relevantes no teste
-```
+$$
+Precision@10 =
+\frac{
+\text{numero de filmes relevantes recomendados}
+}{10}
+$$
+
+$$
+Recall@10 =
+\frac{
+\text{numero de filmes relevantes recomendados}
+}{
+\text{numero total de filmes relevantes no teste}
+}
+$$
 
 Quanto maiores Precision@10 e Recall@10, melhor.
 
